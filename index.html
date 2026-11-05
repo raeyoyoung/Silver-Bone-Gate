@@ -21,7 +21,7 @@ async function loadCompressedGate(){
   const decompressed=response.body.pipeThrough(new DecompressionStream('gzip'));
   const buffer=await new Response(decompressed).arrayBuffer();
   loader.parse(buffer,window.location.href,gltf=>{
- const root=gltf.scene;root.updateMatrixWorld(true);let left=root.getObjectByName('Left Bone Gate'),right=root.getObjectByName('Right Bone Gate');
+ const root=gltf.scene;root.updateMatrixWorld(true);let left=root.getObjectByName('Left_Bone_Gate'),right=root.getObjectByName('Right_Bone_Gate');
  if (!left || !right) {
   const names = [];
   root.traverse(obj => names.push(obj.name || '(unnamed)'));
