@@ -15,7 +15,7 @@ const loader=new GLTFLoader();
 async function loadCompressedGate(){
  try {
   if(!('DecompressionStream' in window)) throw new Error('This browser does not support gzip decompression.');
-  const response=await fetch('bone-gates-web.glb.gz');
+  const response=await fetch('bone-gates-web.glb.gz2');
   if(!response.ok) throw new Error('Model request failed: HTTP '+response.status);
   status.textContent='UNSEALING THE BONE GATES…';
   const decompressed=response.body.pipeThrough(new DecompressionStream('gzip'));
